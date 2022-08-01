@@ -23,7 +23,9 @@ public abstract class Pet {
 
 	@Override
 	public String toString() {
-		return "Pet [name=" + name + "]";
+		String className = this.getClass().getName();
+		int lastIndex = className.lastIndexOf(".");
+		return className.substring(lastIndex + 1) + " [name=" + name + "]";
 	}
 
 }

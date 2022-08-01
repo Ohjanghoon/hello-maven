@@ -22,7 +22,6 @@ public class Main {
 	public static void main(String[] args) {
 		Person p1 = new Person("철수", new Dog("구리구리"));
 		Person p2 = new Person("영희", new Cat("두리두리"));
-		
 		System.out.println(p1);
 		System.out.println(p2);
 		

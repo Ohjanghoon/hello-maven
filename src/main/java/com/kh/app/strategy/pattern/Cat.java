@@ -10,9 +10,9 @@ public class Cat extends Pet {
 		super(name);
 	}
 
-	@Override
-	public String toString() {
-		return "Cat [name=" + name + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Cat [name=" + name + "]";
+//	}
 	
 }

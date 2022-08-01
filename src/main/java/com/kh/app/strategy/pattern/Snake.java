@@ -10,9 +10,9 @@ public class Snake extends Pet {
 		super(name);
 	}
 
-	@Override
-	public String toString() {
-		return "Snake [name=" + name + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Snake [name=" + name + "]";
+//	}
 
 }
