@@ -111,8 +111,10 @@ public class ReflectionMain {
 		//
 		Class[] parameterTypes = {int.class, String.class};
 		Constructor<Sample> const2 = clz1.getDeclaredConstructor(parameterTypes);
+//		Constructor<Sample> const2 = clz1.getDeclaredConstructor(int.class, String.class);
 		Object[] initArgs = {100, "helloworld"};
 		Sample s3 = const2.newInstance(initArgs);
+//		Sample s3 = const2.newInstance(100, "helloworld");
 		System.out.println(s3);  //Sample [num=100, str=helloworld]
 	}
 	
