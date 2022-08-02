@@ -47,19 +47,19 @@ table.tbl-student tr:last-of-type td:first-child{text-align:center;}
                 <tr>
                     <th>학생번호</th>
                     <td>
-                        <input type="number" name="no" value="" required readonly/>
+                        <input type="number" name="no" required readonly/>
                     </td>
                 </tr>
                 <tr>
                     <th>학생이름</th>
                     <td>
-                        <input type="text" name="name" value="" required/>
+                        <input type="text" name="name" required/>
                     </td>
                 </tr>
                 <tr>
                     <th>학생전화번호</th>
                     <td>
-                        <input type="tel" name="tel" value="" required/>
+                        <input type="tel" name="tel" required/>
                     </td>
                 </tr>
                 <tr>
@@ -102,6 +102,42 @@ table.tbl-student tr:last-of-type td:first-child{text-align:center;}
 	
 	const updateStudent = () => {
 		
+		const frm = document.studentUpdateFrm;
+		const no = frm.no.value;
+		const name = frm.name.value;
+		const tel = frm.tel.value;
+		
+		$.ajax({
+			url : '${pageContext.request.contextPath}/student/updateStudent.do',
+			method : 'post',
+			data : {no, name, tel},
+			success(student){
+				console.log(student);
+				alert("회원정보가 정상적으로 수정되었습니다.");
+			},
+			error : console.log
+		});
+	};
+	
+	const deleteStudent = () => {
+		
+		if(confirm("삭제하시겠습니까?")){
+			const frm = document.studentUpdateFrm;
+			const no = frm.no.value;
+			
+			$.ajax({
+				url : '${pageContext.request.contextPath}/student/deleteStudent.do',
+				method : 'post',
+				data : {no},
+				success(response){
+					console.log(response);
+					const {msg} = response;
+					alert(msg);
+					location.reload();
+				},
+				error : console.log
+			});
+		}
 	};
 	</script>
 </body>

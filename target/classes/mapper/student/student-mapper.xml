@@ -37,4 +37,23 @@
 			and
 			no = #{no}
 	</select>
+	
+	<update id="updateStudent">
+		update
+			student
+		set
+			name = #{name},
+			tel = #{tel}
+		where
+			no = #{no}
+	</update>
+	
+	<update id="deleteStudent" parameterType="_int">
+		update
+			student
+		set
+			deleted_at = sysdate
+		where
+			no = #{no}
+	</update>
 </mapper>
