@@ -14,6 +14,11 @@
 	<setting name="jdbcTypeForNull" value="NULL"/> 	<!--  null데이터 전달시 그대로 null로 대입  -->
   </settings>
   
+  <typeAliases>
+  	<!-- <typeAlias type="com.kh.app.student.model.dto.Student" alias="student" /> -->
+  	<package name="com.kh.app"/> <!-- class 이름이 동일할 경우 혼동이 있을 수도 있다. -->
+  </typeAliases>
+  
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>

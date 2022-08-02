@@ -2,6 +2,8 @@ package com.kh.app.student.model.service;
 
 import static com.kh.app.common.SqlSessionUtils.getSqlSession;
 
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.app.student.model.dao.StudentDao;
@@ -28,7 +30,23 @@ public class StudentServiceImpl implements StudentService {
 		} finally {
 			sqlSession.close();
 		}
+		return result;
+	}
+	
+	@Override
+	public int insertStudentMap(Map<String, Object> map) {
+		SqlSession sqlSession = getSqlSession();
+		int result = 0;
 		
+		try {
+			result = studentDao.insertStudentMap(sqlSession, map);
+			sqlSession.commit();
+		} catch (Exception e) {
+			sqlSession.rollback();
+			throw e;
+		} finally {
+			sqlSession.close();
+		}
 		return result;
 	}
 }

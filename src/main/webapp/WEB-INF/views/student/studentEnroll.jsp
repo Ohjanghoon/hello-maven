@@ -49,6 +49,31 @@ alert("${msg}");
 				</tr>
 			</table>
 		</form>
+		
+		<hr />
+		
+		<h2>학생등록(Map)</h2>
+		<form method="POST" action="${pageContext.request.contextPath }/student/studentMapEnroll.do">
+			<table>
+				<tr>
+					<th>학생이름</th>
+					<td>
+						<input type="text" name="name" required/>
+					</td>
+				</tr>
+				<tr>
+					<th>전화번호</th>
+					<td>
+						<input type="tel" name="tel" maxlength="11" required/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="등록" />
+					</td>
+				</tr>
+			</table>
+		</form>
 	</div>
 
 </body>
