@@ -49,4 +49,18 @@ public class StudentServiceImpl implements StudentService {
 		}
 		return result;
 	}
+	
+	@Override
+	public int getTotalCount() {
+		try (SqlSession sqlSession = getSqlSession()){
+			return studentDao.getTotalCount(sqlSession);
+		}
+	}
+	
+	@Override
+	public Student selectOneStudent(int no) {
+		try (SqlSession sqlSession = getSqlSession()){
+			return studentDao.selectOneStudent(sqlSession, no);
+		}
+	}
 }

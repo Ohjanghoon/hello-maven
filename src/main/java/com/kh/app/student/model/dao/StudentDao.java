@@ -12,4 +12,8 @@ public interface StudentDao {
 
 	int insertStudentMap(SqlSession sqlSession, Map<String, Object> map);
 
+	int getTotalCount(SqlSession sqlSession);
+
+	Student selectOneStudent(SqlSession sqlSession, int no);
+
 }

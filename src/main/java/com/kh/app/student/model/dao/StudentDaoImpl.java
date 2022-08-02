@@ -17,4 +17,14 @@ public class StudentDaoImpl implements StudentDao {
 	public int insertStudentMap(SqlSession sqlSession, Map<String, Object> map) {
 		return sqlSession.insert("student.insertStudentMap", map);
 	}
+	
+	@Override
+	public int getTotalCount(SqlSession sqlSession) {
+		return sqlSession.selectOne("student.getTotalCount");
+	}
+	
+	@Override
+	public Student selectOneStudent(SqlSession sqlSession, int no) {
+		return sqlSession.selectOne("student.selectOneStudent", no);
+	}
 }

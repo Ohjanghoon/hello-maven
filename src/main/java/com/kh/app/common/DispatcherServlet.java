@@ -75,6 +75,10 @@ public class DispatcherServlet extends HttpServlet {
 		uri = uri.replace(request.getContextPath(), "");  // /student/studentEnroll.do
 		AbstractController controller = urlCommandMap.get(uri);
 		
+		if(controller == null) {
+			throw new RuntimeException("해당 요청을 처리할 Controller가 존재하지 않습니다.");
+		}
+		
 		//2. 해당 controller 호출
 		String method = request.getMethod();
 		String viewName = null;

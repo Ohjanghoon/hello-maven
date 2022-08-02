@@ -14,6 +14,7 @@
 	<h2>student</h2>
 	<ul>
 		<li><a href="${pageContext.request.contextPath }/student/studentEnroll.do">학생등록</a></li>
+		<li><a href="${pageContext.request.contextPath }/student/selectOne.do">한건 조회</a></li>
 	</ul>
 	
 	

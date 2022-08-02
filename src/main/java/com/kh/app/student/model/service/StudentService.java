@@ -10,4 +10,8 @@ public interface StudentService {
 
 	int insertStudentMap(Map<String, Object> map);
 
+	int getTotalCount();
+
+	Student selectOneStudent(int no);
+
 }

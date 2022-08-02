@@ -17,4 +17,24 @@
 		(seq_student_no.nextval, #{name}, #{tel})
 	</insert>
 	
+	<!-- select태그는 resultType/resultMap 속성을 반드시 작성해야 한다. -->
+	<select id="getTotalCount" resultType="_int">
+		select
+			count(*)
+		from
+			student
+		where
+			deleted_at is null
+	</select>
+	
+	<select id="selectOneStudent" resultType="student">
+		select
+			*
+		from
+			student
+		where
+			deleted_at is null
+			and
+			no = #{no}
+	</select>
 </mapper>
